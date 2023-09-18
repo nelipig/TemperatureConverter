@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class TemperatureConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите температуру: ");
+        double temperature = scanner.nextDouble();
+        
+        System.out.print("Выберите шкалу (1 - Цельсий, 2 - Фаренгейт): ");
+        int choice = scanner.nextInt();
+        
+        double convertedTemperature;
+        if (choice == 1) {
+            convertedTemperature = (temperature - 32) * 5 / 9;
+            System.out.println("Температура в Цельсиях: " + convertedTemperature);
+        } else if (choice == 2) {
+            convertedTemperature = (temperature * 9 / 5) + 32;
+            System.out.println("Температура в Фаренгейтах: " + convertedTemperature);
+        } else {
+            System.out.println("Неверный выбор.");
+        }
+    }
+}
